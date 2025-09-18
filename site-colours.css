@@ -1,0 +1,18 @@
+/* COLOURS */
+/* PRIMARY --- Office Green #008000 */
+/* SECONDARY --- Raspberry #DD1155 */
+/* ACCENT --- Silver Lake Blue #5688C7 */
+/* BACKGROUND --- Jet #2F2F2F */
+/* TEXT --- Jasmine #FFEE88 */
+
+:root {
+    --primary: #008000;
+    --secondary: #DD1155;
+    --accent: #5688C7;
+    --background: #2F2F2F;
+    --text: #FFEE88;
+}
+
+
+/* HEADING --- playfair disp */
+/* BODY --- poppins */
