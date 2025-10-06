@@ -11,8 +11,10 @@ body {
     display: flex;
     align-items: center; 
 }
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
-color: var(--background);
+    color: var(--background);
+    background-color: var(--accent);
 }
 
 .nav-pills a {
