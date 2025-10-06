@@ -3,3 +3,18 @@
 body {
     background-color: var(--background);
 }
+
+.nav {
+    background-color: var(--primary);
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+color: var(--background);
+}
+
+.nav-pills a {
+    color: var(--text);
+}
