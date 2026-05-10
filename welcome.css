@@ -23,9 +23,8 @@ body {
     background-repeat: no-repeat;
     
     filter: blur(8px);
-    z-index: -1; /* Pushes it behind your text/nav */
+    z-index: -1;
     
-    /* Scale it slightly so you don't see white "leaking" at the edges */
     transform: scale(1.1);
 }
 
