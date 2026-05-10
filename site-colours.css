@@ -20,7 +20,7 @@
     --text: #2F2F2F;
     --nav-light: rgba(255, 255, 255, 0.7);
     --nav-dark: rgba(149, 186, 246, 0.3);
-    --card-light: rgba(255, 255, 255, 0.9);
+    --card-light: rgba(255, 255, 255, 0.7);
     --card-dark: rgba(149, 186, 246, 0.3);
     --bg-image: url('light-background.jpg');
     
@@ -40,7 +40,7 @@
     --text: #f8eeb5;
     --nav-light: rgba(50, 50, 50, 0.7);
     --nav-dark: rgba(251, 112, 156, 0.3);
-    --card-light: rgba(50, 50, 50, 0.9);
+    --card-light: rgba(50, 50, 50, 0.7);
     --card-dark: rgba(251, 112, 156, 0.3);
     --bg-image: url('dark-background.png');
 }

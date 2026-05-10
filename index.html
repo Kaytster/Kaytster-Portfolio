@@ -22,6 +22,9 @@
 <body>
     <div id="navbar-placeholder"></div>
     <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
         fetch('navigation.html')
             .then(res => res.text())
             .then(data => {
@@ -36,6 +39,11 @@
                 const toggleBtn = document.getElementById('theme-toggle');
                 const currentTheme = localStorage.getItem('theme');
                 const themeIcon = toggleBtn.querySelector('img');
+
+                if (savedTheme === 'dark') {
+                themeIcon.src = 'sun.png';
+                themeIcon.alt = 'Switch to light mode';
+            }
 
                 toggleBtn.addEventListener('click', () => {
                     let theme = document.documentElement.getAttribute('data-theme');

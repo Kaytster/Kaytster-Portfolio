@@ -1,22 +1,93 @@
 @import "site-colours.css";
 
 body {
-    background-color: var(--background);
+    /* background-color: var(--background);
+    color: var(--text); */
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+    padding-top: 110px;
+    position: relative; 
+    min-height: 100vh;
 }
-
-.nav {
-    background-color: var(--primary);
-    height: 75px;
+ body::before {
+    content: "";
+    position: fixed; 
+    top: 0;
+    left: 0;
     width: 100%;
-    display: flex;
-    align-items: center; 
+    height: 100%;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    filter: blur(8px);
+    z-index: -1;
+    
+    transform: scale(1.1);
 }
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
-    color: var(--background);
-    background-color: var(--accent);
+/* title card */
+.title {
+    width: 800px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, var(--card-light) 80%, var(--card-dark) 100%);
+    border-color: var(--nav-light);
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.2);
 }
-
-.nav-pills a {
+.title > .card-body {
+    text-align: center;
+    text-shadow: 0 0 10px var(--secondary);
     color: var(--text);
+}
+.title > .card-body > h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+}
+/* subtitle card */
+.subtitle {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 60px;
+    background: linear-gradient(to bottom, var(--card-light) 80%, var(--card-dark) 100%);
+    border-color: var(--nav-light);
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.2);
+}
+.subtitle > .card-body {
+    text-align: center;
+    text-shadow: 0 0 10px var(--secondary);
+    color: var(--text);
+}
+.subtitle h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+}
+/* project cards */
+.proj {
+    width: 470px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 60px;
+    background: linear-gradient(to bottom, var(--card-light) 80%, var(--card-dark) 100%);
+    border-color: var(--nav-light);
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.2);
+}
+.proj > .card-body {
+    text-align: center;
+}
+.proj h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.proj > .tag {
+    
 }

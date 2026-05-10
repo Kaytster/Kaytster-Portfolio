@@ -20,17 +20,80 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
 </head>
 <body>
-    <ul class="nav nav-pills justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="current.html">Current Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="past.html">Past Projects</a>
-        </li>
-    </ul>
+    <div id="navbar-placeholder"></div>
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        fetch('navigation.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Logic for active links
+                const links = document.querySelectorAll('.nav-link');
+                const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+                links.forEach(link => {
+                    if (link.getAttribute('href') === currentPath) link.classList.add('active');
+                });
+                // Toggle Logic
+                const toggleBtn = document.getElementById('theme-toggle');
+                const currentTheme = localStorage.getItem('theme');
+                const themeIcon = toggleBtn.querySelector('img');
+
+                if (savedTheme === 'dark') {
+                themeIcon.src = 'sun.png';
+                themeIcon.alt = 'Switch to light mode';
+            }
+
+                toggleBtn.addEventListener('click', () => {
+                    let theme = document.documentElement.getAttribute('data-theme');
+                    if (theme === 'dark') {
+                        document.documentElement.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                        themeIcon.src = 'moon.png'
+                        themeIcon.alt = 'Switch to dark mode'
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                        themeIcon.src = 'sun.png'
+                        themeIcon.alt = 'Switch to light mode'
+                    }
+                })
+            });
+    </script>
     
-    <h1>CURRENT</h1>
+    <div class="card title">
+        <div class="card-body">
+            <h1>Current Projects</h1>
+        </div>
+    </div>
+    <div class="card subtitle">
+        <div class="card-body">
+            <h1>Personal</h1>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <div class="card proj">
+                <div class="card-body">
+                    <h3 style="color: #9842f5;">PlayProgress</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card proj">
+                <div class="card-body">
+                    <h3 style="color: var(--primary);">Portfolio</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card proj">
+                <div class="card-body">
+                    <h3 style="color: #fb7a11;">Pixel Picker</h3>
+                    <p class="tag">Website</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>

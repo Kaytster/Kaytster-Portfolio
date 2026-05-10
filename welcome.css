@@ -67,6 +67,7 @@ body {
 img.me {
     height: 1000px;
     width: 600px;
+    border-radius: 20px;
 }
 .about-me > .card-body {
     text-align: center;
