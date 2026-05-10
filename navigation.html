@@ -8,4 +8,41 @@
     <li class="nav-item">
         <a class="nav-link" href="past.html">Past Projects</a>
     </li>
+    <li class="nav-item">
+        <img src="moon.png" alt="switch to dark mode" />
+    </li>
 </ul>
+
+<style>
+.nav {
+    background-color: var(--primaryD);
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+.nav-pills {
+    padding-right: 20px;
+}
+.nav-pills .nav-link {
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+.nav-pills .nav-link:hover {
+    background-color: var(--accent-lightD);
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    color: var(--backgroundD);
+    background-color: var(--accentD);
+}
+
+.nav-pills a {
+    color: var(--textD);
+}
+
+img {
+    height: 20px;
+    width: 20px;
+}
+</style>
