@@ -6,11 +6,30 @@
 /* TEXT --- Jasmine #FFEE88 */
 
 :root {
-    --primary: #008000;
-    --secondary: #DD1155;
-    --accent: #5688C7;
-    --background: #2F2F2F;
-    --text: #FFEE88;
+    /* DARK MODE */
+    --primaryD: #008000;
+        --primary-lightD: #3ca23c;
+        --primary-darkD: #035403;
+    --secondaryD: #DD1155;
+        --secondary-lightD: #e45182;
+        --secondary-darkD: #a61042;
+    --accentD: #5688C7;
+        --accent-lightD: #86b1e6;
+        --accent-darkD: #3f6da4;
+    --backgroundD: #2F2F2F;
+    --textD: #f8eeb5;
+    /* LIGHT MODE */
+    --primaryL: #008000;
+        --primary-lightL: #3ca23c;
+        --primary-darkL: #035403;
+    --secondaryL: #5688C7;
+        --secondary-lightL: #86b1e6;
+        --secondary-darkL: #3f6da4;
+    --accentL: #DD1155;
+        --accent-lightL: #e45182;
+        --accent-darkL: #a61042;
+    --backgroundL: #f8eeb5;
+    --textL: #2F2F2F;
 }
 
 
