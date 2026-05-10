@@ -27,4 +27,55 @@ body {
     
     transform: scale(1.1);
 }
+/* Title Card */
+.title {
+    width: 800px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, var(--card-light) 80%, var(--card-dark) 100%);
+    border-color: var(--nav-light);
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.2);
+}
+.title > .card-body {
+    text-align: center;
+    text-shadow: 0 0 10px var(--secondary);
+    color: var(--text);
+}
+.title > .card-body > h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+}
+.title > .card-body> p {
+    font-family: 'Poppins', sans-serif;
+}
 
+/* About me card */
+.about-me {
+    width: 1300px;
+    height: auto;
+    margin: auto;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, var(--card-light) 80%, var(--card-dark) 100%);
+    border-color: var(--nav-light);
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.2);
+}
+img.me {
+    height: 1000px;
+    width: 600px;
+}
+.about-me > .card-body {
+    text-align: center;
+    color: var(--text);
+}
+.about-me h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+}
+.about-me p {
+    font-family: 'Poppins', sans-serif;
+}
