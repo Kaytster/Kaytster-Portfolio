@@ -1,4 +1,4 @@
-<ul class="nav nav-pills justify-content-end">
+<ul class="nav nav-pills justify-content-end fixed-top">
     <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
     </li>
@@ -9,17 +9,27 @@
         <a class="nav-link" href="past.html">Past Projects</a>
     </li>
     <li class="nav-item">
-        <img src="moon.png" alt="switch to dark mode" />
+        <button id="theme-toggle" class="nav-link" style="border-radius: 100%; width: 50px; height: 50px; padding: 0; margin: 0; line-height: 0;">
+            <img src="moon.png" alt="switch to dark mode" />
+        </button>
     </li>
 </ul>
 
 <style>
 .nav {
-    background-color: var(--primaryD);
+    background: linear-gradient(to bottom, var(--nav-light), var(--nav-dark));
     height: 75px;
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center; 
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 40px;
+    border-color: #ffffff;
+    /* border-color: red; */
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.2);
 }
 
 .nav-pills {
@@ -28,17 +38,21 @@
 .nav-pills .nav-link {
     transition: all 0.3s ease;
     background-color: transparent;
+    border-radius: 20px;
 }
 .nav-pills .nav-link:hover {
-    background-color: var(--accent-lightD);
+    background-color: var(--accent-light);
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
-    color: var(--backgroundD);
-    background-color: var(--accentD);
+    color: var(--background);
+    background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .nav-pills a {
-    color: var(--textD);
+    color: var(--text);
 }
 
 img {
