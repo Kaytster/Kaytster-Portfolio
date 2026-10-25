@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Past Projects</title>
+    <title>Current Projects</title>
 
     <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- My CSS -->
-     <link rel="stylesheet" href="past.css">
+     <link rel="stylesheet" href="current.css">
 
     <!-- Bootstrap Javascript -->
      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -20,17 +20,88 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
 </head>
 <body>
-    <ul class="nav nav-pills justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="current.html">Current Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="past.html">Past Projects</a>
-        </li>
-    </ul>
+    <div id="navbar-placeholder"></div>
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
 
-    <h1>PAST</h1>
+        fetch('navigation.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Logic for active links
+                const links = document.querySelectorAll('.nav-link');
+                const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+                links.forEach(link => {
+                    if (link.getAttribute('href') === currentPath) link.classList.add('active');
+                });
+                // Toggle Logic
+                const toggleBtn = document.getElementById('theme-toggle');
+                const currentTheme = localStorage.getItem('theme');
+                const themeIcon = toggleBtn.querySelector('img');
+
+                if (savedTheme === 'dark') {
+                themeIcon.src = 'sun.png';
+                themeIcon.alt = 'Switch to light mode';
+            }
+
+                toggleBtn.addEventListener('click', () => {
+                    let theme = document.documentElement.getAttribute('data-theme');
+                    if (theme === 'dark') {
+                        document.documentElement.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                        themeIcon.src = 'moon.png'
+                        themeIcon.alt = 'Switch to dark mode'
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                        themeIcon.src = 'sun.png'
+                        themeIcon.alt = 'Switch to light mode'
+                    }
+                })
+            });
+    </script>
+    
+    <div class="card title">
+        <div class="card-body">
+            <h1>Current Projects</h1>
+        </div>
+    </div>
+    <div class="card subtitle">
+        <div class="card-body">
+            <h1>Personal</h1>
+        </div>
+    </div>
+    <div class="row d-flex flex-wrap">
+        <div class="col-md-4">
+            <div class="card proj h-100">
+                <div class="card-body">
+                    <h3 style="color: #9842f5;">PlayProgress</h3>
+                    <p class="tag-w">Website</p>
+                    <p>A tracker for videogames with a library, achievements, and logs.</p>
+                    <a href="currentProjects/playprogress.html" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card proj h-100">
+                <div class="card-body">
+                    <h3 style="color: var(--primary);">Portfolio</h3>
+                    <p class="tag-w">Website</p>
+                    <p>The website you're on right now!</p>
+                    <a href="currentProjects/portfolio.html" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card proj h-100">
+                <div class="card-body">
+                    <h3 style="color: #fb7a11;">Pixel Picker</h3>
+                    <p class="tag-w">Website</p>
+                    <p>A one page web tool, for identifying colours from an image.</p>
+                    <a href="currentProjects/pixelpicker.html" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
