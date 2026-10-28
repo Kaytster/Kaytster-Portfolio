@@ -176,3 +176,7 @@ body {
     color: var(--text);
     font-family: 'Poppins', sans-serif;
 }
+
+p > a {
+    color: var(--accent) !important;
+}

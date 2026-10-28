@@ -20,7 +20,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
 </head>
 <body>
-
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('../navigation.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Logic for active links
+                const links = document.querySelectorAll('.nav-link');
+                const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+                links.forEach(link => {
+                    if (link.getAttribute('href') === currentPath) link.classList.add('active');
+                });
+            });
+    </script>
+    
     <div class="card title">
         <div class="card-body">
             <h1>I'm Katy</h1>

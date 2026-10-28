@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- My CSS -->
+     <link rel="stylesheet" href="../proj.css">
+
+    <!-- Bootstrap Javascript -->
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('../navigation.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Logic for active links
+                const links = document.querySelectorAll('.nav-link');
+                const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+                links.forEach(link => {
+                    if (link.getAttribute('href') === currentPath) link.classList.add('active');
+                });
+            });
+    </script>
+    
+    <div class="card title">
+        <div class="card-body">
+            <h1>Text Editor</h1>
+        </div>
+    </div>
+    <div class="card subtitle">
+        <div class="card-body">
+            <h1>College</h1>
+        </div>
+    </div>
+    <div class="card intro">
+        <div class="card-body">
+            <h1> For the project, we were required to create a text editor for a fictional client. </h1>
+                <br />
+            <p> The project needed to be created in C# using Visual Studio. 
+                The Project also needed to include accessibility features to make it usable by all.  </p>
+                <br />
+            <p> Here is the link to the GitHub Repository: <a href="https://github.com/Kaytster/Kaytsters-TextEditor">https://github.com/Kaytster/Kaytsters-TextEditor</a></p>
+        </div>
+    </div>
+    <div class="card framework">
+        <div class="row d-flex flex-wrap justify-content-around align-items-center">
+            <div class="col-md-4">
+                <img src="../images/logos/csharp.svg" alt="C# Logo" />
+            </div>
+        </div>
+    </div>
+    <div class="card intro">
+        <div class="card-body">
+            <p>My Text Editor is inspired by existing programmes such as Microsoft Word and Wordpad. </p>
+            <p>For the colour scheme I chose purple and cyan.</p>
+        </div>
+    </div>
+    <div class="card mainFunctions">
+        <div class="card-body">
+            <h3> Main Functions </h3>
+            <br />
+            <ul>
+                <li> Saving and opening a file. </li>
+                <li> Changing the font size and style. </li>
+                <li> Changing the text colour and highlight colour. </li>
+                <li> Viewing the word and letter count. </li>
+                <li> Switching between dark and light mode. </li>
+                <li> Changing the font size of the application itself. </li>
+            </ul>
+        </div>
+    </div>
+    <div class="designs">
+        <div class="card designsC">
+            <div class="card-body">
+                <h3> Video of the Working Site </h3>
+                <video src="../images/texteditor/Text Editor Video.mp4" width="100%" controls></video>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .title {
+    width: 470px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 60px;
+    background: linear-gradient(to bottom, #9842f5ab 80%, #6215b5aa 100%);
+    border-color: #9842f5;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<!-- https://freebiesupply.com/logos/php-logo/ -->
+ <!-- https://freebiesupply.com/logos/bootstrap-logo/ -->
